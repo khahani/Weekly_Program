@@ -1,0 +1,6 @@
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\CoreApplication\bin\Debug\CoreApplication.exe.config
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\CoreApplication\bin\Debug\CoreApplication.exe
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\CoreApplication\bin\Debug\CoreApplication.pdb
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\CoreApplication\obj\Debug\CoreApplication.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\CoreApplication\obj\Debug\CoreApplication.exe
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\CoreApplication\obj\Debug\CoreApplication.pdb

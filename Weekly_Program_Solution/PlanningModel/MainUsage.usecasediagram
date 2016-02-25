@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="2090b9e2-2e4f-433c-adda-8ba77aa08c32" name="MainUsage" linkedPackageId="1ff16621-683b-4054-ada1-488b19512718" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="5d702cf7-3b03-428e-949d-c59af21687c6">
+      <elementDefinition Id="12b15563-3036-4a2e-be3a-c0cc30f49980" />
+      <body>System vision:
+This application after getting the required data that contain teachers free time and required time for each lesson in different maghtae then can prepare weekly program for each class of school.</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="4e82dc25-3f40-4d19-89fc-072c0f8d7ff4">
+      <profileInstance Id="049fb51f-ce40-4207-aef7-ccfcfb0f5b27" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="e4f081f1-36b0-4608-bc0d-6945f06373b0">
+      <profileInstance Id="f7685e4d-a697-4d57-9e3c-9b8dfd0c636b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="1d98f7d4-7dac-469e-88da-b35bb1cbdb26" name="Teacher" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c9eee384-b1ee-44de-ad1d-5224f742b492" />
+        <targetEnds>
+          <association Id="5aff2e6f-32f1-4180-9a94-923149fbd90b" isDerived="false" sourceEndRoleName="Teacher" targetEndRoleName="Register Free Hours" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b202759a-de47-4b41-b85e-0d9b8ef3b3a1" LastKnownName="Register Free Hours" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="71edc28c-074e-4db8-bf62-1a2653af042a" name="Teacher" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="74e033ba-da29-4b55-ad37-a17daf1c76ef" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2c3afb8e-6399-493f-8332-5f99075b0c31" name="Register Free Hours" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="621472a7-13a6-4b1f-8615-6ee051962dff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="29e5d81e-f9d0-417a-a984-bcfa947f9075" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="4ade659b-776e-47e2-a93f-e6a0e97a648b" name="Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="478e8b7b-5365-4975-b568-64a5d1ca58a3" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b202759a-de47-4b41-b85e-0d9b8ef3b3a1" name="Register Free Hours" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c8ea7bcc-f05c-4888-a3c7-f207f61de331" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="49bec85c-e13f-4444-a60b-f7625527b326" name="Maghta" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d77b938e-0f65-4ceb-b6c6-ac8ef1a6e6f7" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="1ff16621-683b-4054-ada1-488b19512718" name="PlanningModel">
+    <elementDefinition Id="920bbb88-b5c1-4f2d-8c10-33ecc248191c" />
+  </package>
+</useCaseModelRoot>
