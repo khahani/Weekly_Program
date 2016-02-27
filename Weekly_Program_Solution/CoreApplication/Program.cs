@@ -27,15 +27,15 @@ namespace CoreApplication
                 {
                     new Schedule
                     {
-                        Id = 1, DayOfWeek = DayOfWeek.Monday, FreeTime = SpecificTime.Ring, AtThisHour = SchoolHours.First
+                        Id = 1, DayOfWeek = DayOfWeek.Monday, Time = SpecificTime.Ring, AtThisHour = SchoolHours.First
                     },
                     new Schedule
                     {
-                        Id = 2, DayOfWeek = DayOfWeek.Saturday, FreeTime = SpecificTime.Ring, AtThisHour = SchoolHours.Second
+                        Id = 2, DayOfWeek = DayOfWeek.Saturday, Time = SpecificTime.Ring, AtThisHour = SchoolHours.Second
                     },
                     new Schedule
                     {
-                        Id = 3, DayOfWeek = DayOfWeek.Saturday, FreeTime = SpecificTime.FirstHalfRing, AtThisHour = SchoolHours.Third
+                        Id = 3, DayOfWeek = DayOfWeek.Saturday, Time = SpecificTime.FirstHalfRing, AtThisHour = SchoolHours.Third
                     }
                 },
                 CanTeachCourses = new List<Course>
@@ -53,7 +53,7 @@ namespace CoreApplication
                 {
                     new Schedule
                     {
-                        Id = 4, DayOfWeek = DayOfWeek.Monday, FreeTime = SpecificTime.Ring, AtThisHour = SchoolHours.Fifth
+                        Id = 4, DayOfWeek = DayOfWeek.Monday, Time = SpecificTime.Ring, AtThisHour = SchoolHours.Fifth
                     }
                 },
                 CanTeachCourses = new List<Course>
@@ -117,7 +117,7 @@ namespace CoreApplication
                 }
             };
 
-            List<ClassSchedule> weeklyProgram = new List<ClassSchedule>();
+            List<ClassSchedule> weeklyProgramForClass102 = new List<ClassSchedule>();
 
             //Create an empty weekly program
             int weeklyProgramIdCounter = 0;
@@ -126,7 +126,7 @@ namespace CoreApplication
                 foreach (var hour in Enum.GetNames(typeof(SchoolHours)))
                 {
                     weeklyProgramIdCounter++;
-                    weeklyProgram.Add(new ClassSchedule
+                    weeklyProgramForClass102.Add(new ClassSchedule
                     {
                         Id = weeklyProgramIdCounter,
                         Class = school.Classes.Where(c=> c.Title == "Class-101").First(),
@@ -135,18 +135,33 @@ namespace CoreApplication
                     });
                 }
             }
-            
+
+            school.Classes.Where(c => c.Title == "Class-102").First().WeeklyProgram = weeklyProgramForClass102;
+
             List<Teacher> allTeacher = new List<Teacher> { t1, t2 };
 
             foreach (var @class in school.Classes)
             {
+                //courses that should be teach in class
                 var shoulBeTeach = courseDetails.Where(cd => cd.Level == @class.Level);
                 
-                foreach (var item in shoulBeTeach)
+                foreach (var courseDetail in shoulBeTeach)
                 {
-                    var canTeachCourse = allTeacher.Where(t => t.CanTeachCourses.Any(c => c.Id == item.Course.Id));
+                    var canTeachCourse = allTeacher.Where(t => t.CanTeachCourses.Any(c => c.Id == courseDetail.Course.Id));
+
+                    //calcluate teacher free time from other classes
+
+                    foreach (var teacher in canTeachCourse)
+                    {
+                        CrossFunctional cross = new CrossFunctional();
+
+                        var freeTime = cross.GetCurrentFreeTimeOfTeacher(school, teacher);
+
+                        if (freeTime == null)
+                            continue;   //Next teacher
 
 
+                    }
 
                 }
             }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MainUsage">
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.5, 10.5" name="MainUsage">
   <useCaseModelRootMoniker Id="2090b9e2-2e4f-433c-adda-8ba77aa08c32" />
   <nestedChildShapes>
     <actorShape Id="a17ec9ad-e264-4ea0-8b24-b6c82e7d8bd4" absoluteBounds="2.125, 1.125, 0.5, 0.5" isReference="false" heightOffset="0">
@@ -14,7 +14,7 @@
       <useCaseMoniker Id="b202759a-de47-4b41-b85e-0d9b8ef3b3a1" LastKnownName="Register Free Hours" />
       <relativeChildShapes />
     </useCaseShape>
-    <useCaseAssociationConnector edgePoints="[(2.32954545454545 : 1.625); (2.17026787302126 : 2.50102669838307)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(2.32954545454545 : 1.625); (2.17026787302126 : 2.50102669838307)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="5aff2e6f-32f1-4180-9a94-923149fbd90b" />
       <relativeChildShapes />
       <nodes>
@@ -28,6 +28,18 @@
     </actorShape>
     <commentShape Id="6c887a97-4b21-4153-9581-ca529f0aca2b" absoluteBounds="3.875, 2.125, 2.75, 2" customColor="251, 247, 200">
       <commentMoniker Id="5d702cf7-3b03-428e-949d-c59af21687c6" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentShape Id="8e5e0b46-ef7a-4279-b17d-a3c9ff19a0d4" absoluteBounds="9.5, 1.25, 2.625, 1.875" customColor="251, 247, 200">
+      <commentMoniker Id="7d3670a9-ef69-4b14-9d88-a053c800cf93" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentShape Id="b827f4b4-6b0c-4110-8f00-a98848200f04" absoluteBounds="9, 3.75, 6.25, 6.5" customColor="251, 247, 200">
+      <commentMoniker Id="2cee9571-912d-48de-8fa9-e334445c31a5" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentShape Id="bbd2ec49-df12-4bdc-9787-0739b73e6f4a" absoluteBounds="3, 4.5, 4.5, 3.5" customColor="251, 247, 200">
+      <commentMoniker Id="bf31d360-4173-43ac-a68e-5f931625eee3" />
       <relativeChildShapes />
     </commentShape>
   </nestedChildShapes>

@@ -1,26 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="2090b9e2-2e4f-433c-adda-8ba77aa08c32" name="MainUsage" linkedPackageId="1ff16621-683b-4054-ada1-488b19512718" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="2090b9e2-2e4f-433c-adda-8ba77aa08c32" name="MainUsage" linkedPackageId="1ff16621-683b-4054-ada1-488b19512718" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
     <comment Id="5d702cf7-3b03-428e-949d-c59af21687c6">
       <elementDefinition Id="12b15563-3036-4a2e-be3a-c0cc30f49980" />
       <body>System vision:
 This application after getting the required data that contain teachers free time and required time for each lesson in different maghtae then can prepare weekly program for each class of school.</body>
     </comment>
+    <comment Id="7d3670a9-ef69-4b14-9d88-a053c800cf93">
+      <elementDefinition Id="a89cc38e-8c57-4fa3-8720-c43eb4849767" />
+      <body>Features notification:
+
+As notification system can calculate total time for each class that need and - teachers free time then tell manager that There is not enough time to complete program</body>
+    </comment>
+    <comment Id="2cee9571-912d-48de-8fa9-e334445c31a5">
+      <elementDefinition Id="d5dbd549-a321-4c0d-9e57-4187285bb448" />
+      <body>در دوران مدیریتم از دوچیز نفرت داشتم
+
+1-ارزشیابی کارکنان
+
+2- امور مالی
+
+واز تنظیم برنامه هفتگی لذت می برم بویژه  وقتی تمام میشود وپاک کن ومداد  از دست من نفسی میکشند ...
+
+من که امشب برنامه هفتگی مدرسه رو تمام کردم واز مهمترین خان پروژه مهر گذشتم
+
+
+به دو دلیل مهم:
+
+1- همانطور که گفتم  این یکی از کارهای مهمی است که حتما باید انجام شود پس چه بهتر که زودتر تمام شود وآرامش بیشر را بر خود حاکم نماییم.
+
+2-هرچه زودتر برنامه بسته شود  مشکلات شما کمتر است چرا که اگر دیر شود شما باید تابع مدارس دیگر باشید (در مورد دبیران مشترک)
+
+اما برای این که برنامه شما سریعتر تنظیم وبا مشکلات کمتری مواجعه شوید به نظر من بهتر است موارد زیل را رعایت نمایید:
+
+1-دبیران کمتر از یک روز باهم هماهنگ شوند ...مثلا اگر یک دبیر 3 ساعته دارید ویکی دیگر 4 ساعته یا 5 که باهم یک روز میشود باید اینها هم روز باشند یعنی حداقل یک روز مشترک داشته باشندو...
+
+2-قبل از بستن روزها برای پیشگیری ازسنگینی درسها در یک روز حواستان باشد. 
+
+3-دبیرانی که تک ساعت دارند تا حد ممکن با هم باشند وگرنه مشکلات شما بیشتر شده واحتمالا برای 2 ساعته ها اجبارا باید تک ساعت تنظیم نمایید.
+
+4-اول تک ساعت ها را بچینید.( باهم وضربدری تنظیم کنید)
+
+5-بعد دبیرانی که بیش از یک جلسه با کلاس ها کار دارند را بچینید(واین چند ساعت قابل تفکیک نیست مثل علوم تجربی راهنمایی)
+
+6-در ادامه کار بقیه ساعت ها ومواظب برخورد ها باشید.
+
+7-در پایان عمودی وافقی کنترل نمایید.
+
+8-برای تهیه برنامه هر کلاس وابلاغ به دانش آموزان نیز حواستنان به سنگینی درس ها باشد مثلا در دینی قرآن عربی میتوان مانور داد و همینطور در علوم اجتماعی و...
+
+9-اما نکته امنیتی این که اگر همکاری از روزهای کاری خود ناراضی است یا رضایت اورا جلب کن
+
+ یا مواظب برنامه باش که ناپدید نشود!!!!!!!!!!!!!!!!!!!!!!!!!</body>
+    </comment>
+    <comment Id="bf31d360-4173-43ac-a68e-5f931625eee3">
+      <elementDefinition Id="15270044-1792-41d3-ba68-132a758a5fb3" />
+      <body>This application should be implement in three version:
+
+1- An application that have tools for implementing WP for schools. This applicaiton with notification and primary objective tools can help manager to dont make mistake when implementing WP. in the end manager can print different style of WP.
+
+* When this tools completed and user can easily implement their WP and this 	application help him alot then moving to next version. 
+
+2- In this version application with diifferent condiiton can suggest to manager do this work or some kind of work that when manager define the WP may not thinking about it. In this version application can help manager to implement better WP, for example day difficulty or suggestion for better day difficulty. The feature of this version should be complete after finishing version 1 and rethink about the features.
+
+3- In this version application should at the begining of implementing WP fill some of the best conditions befor manager start implementing the WP. and in customzing WP by manager application tell manager mistakes and get him better suggestions.
+
+4- In this version by giving requirement to system application implement WPs and if some where need some thing like new teacher or teacher change his time will tell manager and in fact manager help application to complete it's WP.(this is awesome)
+</body>
+    </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="4e82dc25-3f40-4d19-89fc-072c0f8d7ff4">
-      <profileInstance Id="049fb51f-ce40-4207-aef7-ccfcfb0f5b27" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="e4f081f1-36b0-4608-bc0d-6945f06373b0">
-      <profileInstance Id="f7685e4d-a697-4d57-9e3c-9b8dfd0c636b" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="1d98f7d4-7dac-469e-88da-b35bb1cbdb26" name="Teacher" isAbstract="false" isLeaf="false">
@@ -63,5 +111,19 @@ This application after getting the required data that contain teachers free time
   </packagedElements>
   <package Id="1ff16621-683b-4054-ada1-488b19512718" name="PlanningModel">
     <elementDefinition Id="920bbb88-b5c1-4f2d-8c10-33ecc248191c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4e82dc25-3f40-4d19-89fc-072c0f8d7ff4">
+        <profileInstance Id="049fb51f-ce40-4207-aef7-ccfcfb0f5b27" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e4f081f1-36b0-4608-bc0d-6945f06373b0">
+        <profileInstance Id="f7685e4d-a697-4d57-9e3c-9b8dfd0c636b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

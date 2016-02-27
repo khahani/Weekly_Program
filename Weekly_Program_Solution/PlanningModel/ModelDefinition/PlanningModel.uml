@@ -9,6 +9,68 @@
       <body>System vision:
 This application after getting the required data that contain teachers free time and required time for each lesson in different maghtae then can prepare weekly program for each class of school.</body>
     </comment>
+    <comment
+      Id="a89cc38e-8c57-4fa3-8720-c43eb4849767">
+      <body>Features notification:
+
+As notification system can calculate total time for each class that need and - teachers free time then tell manager that There is not enough time to complete program</body>
+    </comment>
+    <comment
+      Id="d5dbd549-a321-4c0d-9e57-4187285bb448">
+      <body>در دوران مدیریتم از دوچیز نفرت داشتم
+
+1-ارزشیابی کارکنان
+
+2- امور مالی
+
+واز تنظیم برنامه هفتگی لذت می برم بویژه  وقتی تمام میشود وپاک کن ومداد  از دست من نفسی میکشند ...
+
+من که امشب برنامه هفتگی مدرسه رو تمام کردم واز مهمترین خان پروژه مهر گذشتم
+
+
+به دو دلیل مهم:
+
+1- همانطور که گفتم  این یکی از کارهای مهمی است که حتما باید انجام شود پس چه بهتر که زودتر تمام شود وآرامش بیشر را بر خود حاکم نماییم.
+
+2-هرچه زودتر برنامه بسته شود  مشکلات شما کمتر است چرا که اگر دیر شود شما باید تابع مدارس دیگر باشید (در مورد دبیران مشترک)
+
+اما برای این که برنامه شما سریعتر تنظیم وبا مشکلات کمتری مواجعه شوید به نظر من بهتر است موارد زیل را رعایت نمایید:
+
+1-دبیران کمتر از یک روز باهم هماهنگ شوند ...مثلا اگر یک دبیر 3 ساعته دارید ویکی دیگر 4 ساعته یا 5 که باهم یک روز میشود باید اینها هم روز باشند یعنی حداقل یک روز مشترک داشته باشندو...
+
+2-قبل از بستن روزها برای پیشگیری ازسنگینی درسها در یک روز حواستان باشد. 
+
+3-دبیرانی که تک ساعت دارند تا حد ممکن با هم باشند وگرنه مشکلات شما بیشتر شده واحتمالا برای 2 ساعته ها اجبارا باید تک ساعت تنظیم نمایید.
+
+4-اول تک ساعت ها را بچینید.( باهم وضربدری تنظیم کنید)
+
+5-بعد دبیرانی که بیش از یک جلسه با کلاس ها کار دارند را بچینید(واین چند ساعت قابل تفکیک نیست مثل علوم تجربی راهنمایی)
+
+6-در ادامه کار بقیه ساعت ها ومواظب برخورد ها باشید.
+
+7-در پایان عمودی وافقی کنترل نمایید.
+
+8-برای تهیه برنامه هر کلاس وابلاغ به دانش آموزان نیز حواستنان به سنگینی درس ها باشد مثلا در دینی قرآن عربی میتوان مانور داد و همینطور در علوم اجتماعی و...
+
+9-اما نکته امنیتی این که اگر همکاری از روزهای کاری خود ناراضی است یا رضایت اورا جلب کن
+
+ یا مواظب برنامه باش که ناپدید نشود!!!!!!!!!!!!!!!!!!!!!!!!!</body>
+    </comment>
+    <comment
+      Id="15270044-1792-41d3-ba68-132a758a5fb3">
+      <body>This application should be implement in three version:
+
+1- An application that have tools for implementing WP for schools. This applicaiton with notification and primary objective tools can help manager to dont make mistake when implementing WP. in the end manager can print different style of WP.
+
+* When this tools completed and user can easily implement their WP and this 	application help him alot then moving to next version. 
+
+2- In this version application with diifferent condiiton can suggest to manager do this work or some kind of work that when manager define the WP may not thinking about it. In this version application can help manager to implement better WP, for example day difficulty or suggestion for better day difficulty. The feature of this version should be complete after finishing version 1 and rethink about the features.
+
+3- In this version application should at the begining of implementing WP fill some of the best conditions befor manager start implementing the WP. and in customzing WP by manager application tell manager mistakes and get him better suggestions.
+
+4- In this version by giving requirement to system application implement WPs and if some where need some thing like new teacher or teacher change his time will tell manager and in fact manager help application to complete it's WP.(this is awesome)
+</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
