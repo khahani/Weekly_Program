@@ -11,5 +11,7 @@ namespace CoreApplication.Model
         public int Id { get; set; }
         public string Title { get; set; }
         public Level Level { get; set; }
+
+        public List<ClassSchedule> WeeklyProgram { get; set; }
     }
 }
