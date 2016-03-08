@@ -1,0 +1,13 @@
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\bin\Debug\WP_Windows.exe.config
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\bin\Debug\WP_Windows.exe
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\bin\Debug\WP_Windows.pdb
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.Form1.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.exe
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.pdb
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.HalfRing.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.TeacherWP.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.MergedWP.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.HorizontalList.resources
