@@ -47,6 +47,8 @@
     <Compile Include="Model\ClassSchedule.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\CourseDetail.cs" />
+    <Compile Include="Model\CrossFunctional.cs" />
+    <Compile Include="Model\Extensions\TeacherHelper.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Schedule.cs" />
     <Compile Include="Model\School.cs" />

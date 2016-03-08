@@ -35,9 +35,12 @@ namespace CoreApplication.Model
             return currentFreeTime;
         }
 
-        public Dictionary<SpecificTime, int> RemainTimeForCourse(Class @class, Course course)
-        {
-
-        }
+        //public Dictionary<SpecificTime, int> RemainTimeForCourse(Class @class, CourseDetail course)
+        //{
+        //    foreach (var item in @class.WeeklyProgram)
+        //    {
+        //        item.c
+        //    }
+        //}
     }
 }

@@ -38,7 +38,7 @@
       <commentMoniker Id="2cee9571-912d-48de-8fa9-e334445c31a5" />
       <relativeChildShapes />
     </commentShape>
-    <commentShape Id="bbd2ec49-df12-4bdc-9787-0739b73e6f4a" absoluteBounds="3, 4.5, 4.5, 3.5" customColor="251, 247, 200">
+    <commentShape Id="bbd2ec49-df12-4bdc-9787-0739b73e6f4a" absoluteBounds="3, 4.5, 4.5, 3.5" customColor="192, 255, 192">
       <commentMoniker Id="bf31d360-4173-43ac-a68e-5f931625eee3" />
       <relativeChildShapes />
     </commentShape>
