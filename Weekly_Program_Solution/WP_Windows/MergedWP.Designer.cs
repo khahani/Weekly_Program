@@ -357,7 +357,7 @@
             // 
             // label18
             // 
-            this.label18.BackColor = System.Drawing.SystemColors.Info;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(105)))));
             this.label18.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label18.Location = new System.Drawing.Point(124, 57);
             this.label18.Name = "label18";
@@ -685,7 +685,7 @@
             // 
             // label46
             // 
-            this.label46.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
             this.label46.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label46.Location = new System.Drawing.Point(244, 57);
             this.label46.Name = "label46";
