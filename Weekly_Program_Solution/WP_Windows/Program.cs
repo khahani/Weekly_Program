@@ -16,7 +16,7 @@ namespace WP_Windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MergedWP());
+            Application.Run(new Form1());
         }
     }
 }

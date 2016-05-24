@@ -11,3 +11,4 @@ C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\W
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.TeacherWP.resources
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.MergedWP.resources
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.HorizontalList.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Windows\obj\Debug\WP_Windows.Form2.resources
