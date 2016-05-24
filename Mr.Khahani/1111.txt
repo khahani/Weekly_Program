@@ -1,0 +1,5 @@
+﻿http://stackoverflow.com/questions/28296517/how-to-customize-bootstrap-3-tab-color
+http://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp
+http://www.w3schools.com/bootstrap/bootstrap_grid_system.asp
+http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_ex1&stacked=h
+https://getbootstrap.com/examples/grid/
