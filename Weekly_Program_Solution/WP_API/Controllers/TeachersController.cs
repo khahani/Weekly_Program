@@ -12,7 +12,7 @@ namespace WP_API.Controllers
         // GET: Teachers
         public ActionResult Index()
         {
-            return View();
+            return null;
         }
     }
 }
