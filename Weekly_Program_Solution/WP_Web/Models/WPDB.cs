@@ -10,5 +10,6 @@ namespace WP_Web.Models
     {
         public WPDB() : base("Server=WIN-SPK3MC24AA4\\DEV;Database=WPDB;Integrated Security=true;") { }
         public DbSet<User> Users { get; set; }
+        public DbSet<AcademicYear> AcademicYears { get; set; }
     }
 }

@@ -16,5 +16,6 @@ namespace WP_Web.Models
         public string Password { get; set; }
         public bool Active { get; set; }
         public bool Blocked { get; set; }
+        public virtual ICollection<AcademicYear> AcademicYears { get; set; }
     }
 }

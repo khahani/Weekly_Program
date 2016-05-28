@@ -167,9 +167,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605280619107_InitialCreate.cs" />
+    <Compile Include="Migrations\201605280619107_InitialCreate.Designer.cs">
+      <DependentUpon>201605280619107_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605280833034_AddAcademicYears.cs" />
+    <Compile Include="Migrations\201605280833034_AddAcademicYears.Designer.cs">
+      <DependentUpon>201605280833034_AddAcademicYears.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicYears.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
-    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\WPDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +192,7 @@
     <Content Include="Views\Home\ActivateMessage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\User\AcademicYears.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,7 +201,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\User\" />
+    <EmbeddedResource Include="Migrations\201605280619107_InitialCreate.resx">
+      <DependentUpon>201605280619107_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605280833034_AddAcademicYears.resx">
+      <DependentUpon>201605280833034_AddAcademicYears.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
