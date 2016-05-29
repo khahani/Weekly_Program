@@ -31,7 +31,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.ActionLink("Weekly Schedules", "Index", "WeeklySchedules", new { id = item.AcademicYearId }) |
+                @Html.ActionLink("Weekly Schedules", "Index", "WeeklySchedules", new { id = item.AcademicYearId }, null) |
                 @Html.ActionLink("Edit", "Edit", new { id=item.AcademicYearId }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.AcademicYearId })
             </td>
