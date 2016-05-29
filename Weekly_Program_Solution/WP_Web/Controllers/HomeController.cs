@@ -131,7 +131,7 @@ namespace WP_Web.Controllers
 
             Session["Auth"] = authenticated;
 
-            return RedirectToAction("AcademicYears", "User");
+            return RedirectToAction("Index", "AcademicYears");
         }
 
     }

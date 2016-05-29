@@ -53,3 +53,4 @@ C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\W
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.InitialCreate.resources
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.AddAcademicYears.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.AddTeacher.resources
