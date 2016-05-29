@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>AcademicYears</title>
+    <title>Index</title>
 </head>
 <body>
     <p>
@@ -17,9 +17,7 @@
     </p>
     <table class="table">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Email)
-            </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
@@ -28,15 +26,13 @@
     
     @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
+                @Html.ActionLink("Weekly Schedules", "Index", "WeeklySchedules", new { id = item.AcademicYearId }) |
                 @Html.ActionLink("Edit", "Edit", new { id=item.AcademicYearId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.AcademicYearId }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.AcademicYearId })
             </td>
         </tr>

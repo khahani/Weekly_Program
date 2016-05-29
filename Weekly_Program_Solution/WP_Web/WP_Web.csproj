@@ -162,8 +162,10 @@
   <ItemGroup>
     <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AcademicYearsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WeeklySchedulesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,9 +177,14 @@
     <Compile Include="Migrations\201605280833034_AddAcademicYears.Designer.cs">
       <DependentUpon>201605280833034_AddAcademicYears.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605290903307_AddTeacher.cs" />
+    <Compile Include="Migrations\201605290903307_AddTeacher.Designer.cs">
+      <DependentUpon>201605290903307_AddTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AcademicYears.cs" />
+    <Compile Include="Models\AcademicYear.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\WPDB.cs" />
@@ -192,7 +199,11 @@
     <Content Include="Views\Home\ActivateMessage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\User\AcademicYears.cshtml" />
+    <Content Include="Views\AcademicYears\Create.cshtml" />
+    <Content Include="Views\AcademicYears\Delete.cshtml" />
+    <Content Include="Views\AcademicYears\Edit.cshtml" />
+    <Content Include="Views\AcademicYears\Index.cshtml" />
+    <Content Include="Views\WeeklySchedules\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,7 +218,11 @@
     <EmbeddedResource Include="Migrations\201605280833034_AddAcademicYears.resx">
       <DependentUpon>201605280833034_AddAcademicYears.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605290903307_AddTeacher.resx">
+      <DependentUpon>201605290903307_AddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
