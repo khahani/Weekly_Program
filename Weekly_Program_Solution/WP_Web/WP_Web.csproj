@@ -164,6 +164,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AcademicYearsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WeeklySchedulesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,6 +205,11 @@
     <Content Include="Views\AcademicYears\Edit.cshtml" />
     <Content Include="Views\AcademicYears\Index.cshtml" />
     <Content Include="Views\WeeklySchedules\Index.cshtml" />
+    <Content Include="Views\Teachers\Create.cshtml" />
+    <Content Include="Views\Teachers\Delete.cshtml" />
+    <Content Include="Views\Teachers\Details.cshtml" />
+    <Content Include="Views\Teachers\Edit.cshtml" />
+    <Content Include="Views\Teachers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
