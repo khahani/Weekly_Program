@@ -1,0 +1,13 @@
+﻿@using (Ajax.BeginForm("Search", "Lessons", FormMethod.Post,
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST",
+            UpdateTargetId = "search-results"
+        }))
+{
+    <div>
+        @Html.TextBox("filter")
+        <input type="submit" value="جستجو" onclick=""/>
+    </div>
+}

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WP_Web.Models.Teacher>
+﻿@model IEnumerable<WP_Web.Models.Lesson>
 
 @{
     Layout = null;
@@ -20,9 +20,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Job)
-            </th>
             <th></th>
         </tr>
     
@@ -32,11 +29,8 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Job)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.TeacherId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.TeacherId })
+                @Html.ActionLink("Edit", "Edit", new { id=item.LessonId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.LessonId })
             </td>
         </tr>
     }

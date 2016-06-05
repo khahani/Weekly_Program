@@ -16,22 +16,19 @@ namespace WP_Web.Migrations
                         AcademicYearId = c.Int(nullable: false),
                         Name = c.String(nullable: false, maxLength: 100),
                         Job = c.String(),
-                        AcademicYear_AcademicYearId = c.Int(nullable: false)
                     })
                 .PrimaryKey(t => t.TeacherId)
-                .ForeignKey("dbo.AcademicYears", t => t.AcademicYear_AcademicYearId)
+                .ForeignKey("dbo.AcademicYears", t => t.AcademicYearId)
                 .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
-                .Index(t => new { t.Name, t.AcademicYearId }, unique: true, name: "IX_NameAndAcademicYear")
-                .Index(t => t.AcademicYear_AcademicYearId);
+                .Index(t => new { t.Name, t.AcademicYearId }, unique: true, name: "IX_NameAndAcademicYear");
             
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Teachers", "UserId", "dbo.Users");
-            DropForeignKey("dbo.Teachers", "AcademicYear_AcademicYearId", "dbo.AcademicYears");
-            DropIndex("dbo.Teachers", new[] { "AcademicYear_AcademicYearId" });
+            DropForeignKey("dbo.Teachers", "AcademicYearId", "dbo.AcademicYears");
             DropIndex("dbo.Teachers", "IX_NameAndAcademicYear");
             DropIndex("dbo.Teachers", new[] { "UserId" });
             DropTable("dbo.Teachers");

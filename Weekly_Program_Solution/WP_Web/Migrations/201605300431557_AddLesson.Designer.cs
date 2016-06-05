@@ -7,13 +7,13 @@ namespace WP_Web.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddTeacher : IMigrationMetadata
+    public sealed partial class AddLesson : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTeacher));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddLesson));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605290903307_AddTeacher"; }
+            get { return "201605300431557_AddLesson"; }
         }
         
         string IMigrationMetadata.Source

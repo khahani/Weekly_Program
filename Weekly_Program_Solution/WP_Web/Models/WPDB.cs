@@ -14,6 +14,8 @@ namespace WP_Web.Models
         public DbSet<User> Users { get; set; }
         public DbSet<AcademicYear> AcademicYears { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
+        public DbSet<CanTeach> CanTeaches { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,6 +41,7 @@ namespace WP_Web.Models
                 .HasRequired(t => t.AcademicYear)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
 
             base.OnModelCreating(modelBuilder);
         }

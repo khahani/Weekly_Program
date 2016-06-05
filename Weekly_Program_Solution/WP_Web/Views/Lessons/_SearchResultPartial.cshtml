@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WP_Web.Models.Lesson>
+@if (Model.Count() == 0)
+{
+    <h3 class="text-error">چنین درسی وجود ندارد. </h3>
+}
+else
+{
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+}
