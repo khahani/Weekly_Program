@@ -15,6 +15,6 @@ namespace WP_Web.Models
         public virtual User User { get; set; }
         public string Title { get; set; }
 
-        public virtual ICollection<Teacher> Teachers { get; set; }
+        //public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }

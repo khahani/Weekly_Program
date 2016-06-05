@@ -9,10 +9,10 @@ namespace WP_Web.Models
 {
     public class Teacher
     {
+        [Key]
         public int TeacherId { get; set; }
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
-        [Required]
         public int AcademicYearId { get; set; }
         public virtual AcademicYear AcademicYear { get; set; }
         public string Name { get; set; }

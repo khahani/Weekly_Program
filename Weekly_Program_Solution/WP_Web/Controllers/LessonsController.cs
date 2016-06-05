@@ -10,7 +10,7 @@ using WP_Web.Models;
 
 namespace WP_Web.Controllers
 {
-    public class TeachersController : Controller
+    public class LessonsController : Controller
     {
         private WPDB db = new WPDB();
 
@@ -44,7 +44,7 @@ namespace WP_Web.Controllers
             }
         }
 
-        // GET: Teachers
+        // GET: Lessons
         public ActionResult Index()
         {
             if (!AuthInfo.Authenticated)
@@ -55,14 +55,17 @@ namespace WP_Web.Controllers
                 return RedirectToAction("Index", "AcademicYears");
             }
 
-            var teachers = db.Teachers
-                .Where(t=>t.UserId == CurrentUser.UserId && t.AcademicYearId == CurrentAcademicYear.AcademicYearId);
+            var lessons = db.Lessons
+                .Where(l => l.AcademicYearId == CurrentAcademicYear.AcademicYearId &&
+                            l.UserId == CurrentUser.UserId)
+                .OrderBy(l=>l.Name);
+            
 
-            return View(teachers.ToList());
+            return View(lessons.ToList());
         }
 
-        // GET: Teachers/Create
-        public ActionResult Create()
+        [HttpGet]
+        public ActionResult Search()
         {
             if (!AuthInfo.Authenticated)
                 return RedirectToAction("Login", "Home");
@@ -72,15 +75,52 @@ namespace WP_Web.Controllers
                 return RedirectToAction("Index", "AcademicYears");
             }
 
+            return PartialView("_SearchFormPartial");
+        }
+
+        [HttpPost]
+        public ActionResult Search(string filter)
+        {
+            if (!AuthInfo.Authenticated)
+                return RedirectToAction("Login", "Home");
+
+            if (CurrentAcademicYear.AcademicYearId == -1)
+            {
+                return RedirectToAction("Index", "AcademicYears");
+            }
+
+            var lessons = db.Lessons
+                .Where(l => l.AcademicYearId == CurrentAcademicYear.AcademicYearId &&
+                            l.UserId == CurrentUser.UserId);
+
+            if (filter != string.Empty)
+                lessons = lessons.Where(l => l.Name.StartsWith(filter));
+
+            lessons = lessons.OrderBy(l => l.Name);
+
+            return PartialView("_SearchResultPartial", lessons.ToList());
+        }
+
+        // GET: Lessons/Create
+        public ActionResult Create()
+        {
+            if (!AuthInfo.Authenticated)
+                return RedirectToAction("Login", "Home");
+
+            if (CurrentAcademicYear.AcademicYearId == -1)
+            {
+                return RedirectToAction("Index", "AcademicYears");
+            }
+            
             return View();
         }
 
-        // POST: Teachers/Create
+        // POST: Lessons/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TeacherId,Name,Job")] Teacher teacher)
+        public ActionResult Create([Bind(Include = "LessonId,Name")] Lesson lesson)
         {
             if (!AuthInfo.Authenticated)
                 return RedirectToAction("Login", "Home");
@@ -92,16 +132,19 @@ namespace WP_Web.Controllers
 
             if (ModelState.IsValid)
             {
-                teacher.UserId = CurrentUser.UserId;
-                teacher.AcademicYearId = CurrentAcademicYear.AcademicYearId;
+                lesson.AcademicYearId = CurrentAcademicYear.AcademicYearId;
+                lesson.UserId = CurrentUser.UserId;
 
-                db.Teachers.Add(teacher);
+                db.Lessons.Add(lesson);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+               return Redirect(Request.UrlReferrer.ToString());
             }
-            return View(teacher);
+
+            return View(lesson);
         }
-        // GET: Teachers/Edit/5
+
+        // GET: Lessons/Edit/5
         public ActionResult Edit(int? id)
         {
             if (!AuthInfo.Authenticated)
@@ -116,71 +159,67 @@ namespace WP_Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = db.Teachers
-                .Where(t=>t.AcademicYearId == CurrentAcademicYear.AcademicYearId && t.UserId == CurrentUser.UserId && t.TeacherId == id)
+            Lesson lesson = db.Lessons
+                 .Where(l => l.AcademicYearId == CurrentAcademicYear.AcademicYearId &&
+                            l.UserId == CurrentUser.UserId &&
+                            l.LessonId == id)
                 .FirstOrDefault();
 
-            if (teacher == null)
+            if (lesson == null)
             {
                 return HttpNotFound();
             }
-            return View(teacher);
+            return View(lesson);
         }
 
-        // POST: Teachers/Edit/5
+        // POST: Lessons/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TeacherId,Name,Job")] Teacher teacher)
+        public ActionResult Edit([Bind(Include = "LessonId,Name")] Lesson lesson)
         {
-            if (!AuthInfo.Authenticated)
-                return RedirectToAction("Login", "Home");
-
-            if (CurrentAcademicYear.AcademicYearId == -1)
-            {
-                return RedirectToAction("Index", "AcademicYears");
-            }
-
             if (ModelState.IsValid)
             {
-                db.Entry(teacher).State = EntityState.Modified;
-                teacher.UserId = CurrentUser.UserId;
-                teacher.AcademicYearId = CurrentAcademicYear.AcademicYearId;
+                db.Entry(lesson).State = EntityState.Modified;
+                lesson.UserId = CurrentUser.UserId;
+                lesson.AcademicYearId = CurrentAcademicYear.AcademicYearId;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(teacher);
+            return View(lesson);
         }
 
-        // GET: Teachers/Delete/5
+        // GET: Lessons/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = db.Teachers
-                .Where(t => t.UserId == CurrentUser.UserId && t.AcademicYearId == CurrentAcademicYear.AcademicYearId && t.TeacherId == id)
+            Lesson lesson = db.Lessons
+                .Where(l => l.AcademicYearId == CurrentAcademicYear.AcademicYearId &&
+                            l.UserId == CurrentUser.UserId &&
+                            l.LessonId == id)
                 .FirstOrDefault();
-
-            if (teacher == null)
+            if (lesson == null)
             {
                 return HttpNotFound();
             }
-            return View(teacher);
+            return View(lesson);
         }
 
-        // POST: Teachers/Delete/5
+        // POST: Lessons/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Teacher teacher = db.Teachers
-                .Where(t => t.UserId == CurrentUser.UserId && t.AcademicYearId == CurrentAcademicYear.AcademicYearId && t.TeacherId == id)
+            Lesson lesson = db.Lessons
+                .Where(l => l.AcademicYearId == CurrentAcademicYear.AcademicYearId &&
+                            l.UserId == CurrentUser.UserId &&
+                            l.LessonId == id)
                 .FirstOrDefault();
-
-            db.Teachers.Remove(teacher);
+            db.Lessons.Remove(lesson);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
