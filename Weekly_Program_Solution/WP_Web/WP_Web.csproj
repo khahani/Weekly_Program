@@ -165,7 +165,6 @@
     <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AcademicYearsController.cs" />
-    <Compile Include="Controllers\CanTeachesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
@@ -194,10 +193,15 @@
     <Compile Include="Migrations\201606010714492_Add_CanTeaches.Designer.cs">
       <DependentUpon>201606010714492_Add_CanTeaches.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606080720489_AddClass.cs" />
+    <Compile Include="Migrations\201606080720489_AddClass.Designer.cs">
+      <DependentUpon>201606080720489_AddClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicYear.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
     <Compile Include="Models\CanTeach.cs" />
+    <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\TeacherViewModel.cs" />
@@ -220,7 +224,6 @@
     <Content Include="Views\AcademicYears\Edit.cshtml" />
     <Content Include="Views\AcademicYears\Index.cshtml" />
     <Content Include="Views\WeeklySchedules\Index.cshtml" />
-    <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Teachers\Delete.cshtml" />
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
@@ -233,6 +236,7 @@
     <Content Include="Views\Lessons\List.cshtml" />
     <Content Include="Views\Lessons\_SearchFormPartial.cshtml" />
     <Content Include="Views\Lessons\_SearchResultPartial.cshtml" />
+    <Content Include="Views\Teachers\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -256,10 +260,11 @@
     <EmbeddedResource Include="Migrations\201606010714492_Add_CanTeaches.resx">
       <DependentUpon>201606010714492_Add_CanTeaches.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606080720489_AddClass.resx">
+      <DependentUpon>201606080720489_AddClass.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\CanTeaches\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
