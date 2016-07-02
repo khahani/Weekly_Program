@@ -60,7 +60,7 @@ namespace WP_Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AcademicYearId,Title")] AcademicYear academicYear)
+        public ActionResult Create([Bind(Include = "AcademicYearId,Title,DefaultRingCount")] AcademicYear academicYear)
         {
             if (!AuthInfo.Authenticated)
                 return RedirectToAction("Login", "Home");
@@ -102,7 +102,7 @@ namespace WP_Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AcademicYearId,Title")] AcademicYear academicYear)
+        public ActionResult Edit([Bind(Include = "AcademicYearId,Title,DefaultRingCount")] AcademicYear academicYear)
         {
             if (!AuthInfo.Authenticated)
                 return RedirectToAction("Login", "Home");

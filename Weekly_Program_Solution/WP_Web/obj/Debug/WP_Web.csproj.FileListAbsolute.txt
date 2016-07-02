@@ -57,3 +57,7 @@ C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\W
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.AddLesson.resources
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.Add_CanTeaches.resources
 C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.AddClass.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.Add_DefaultRingCount.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\bin\MvcCheckBoxList.dll
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.Add_TeacherFreeTime.resources
+C:\Users\Administrator\Documents\GitHub\Weekly_Program\Weekly_Program_Solution\WP_Web\obj\Debug\WP_Web.Migrations.Add_WeeklyProgram.resources

@@ -14,6 +14,7 @@ Create	Table	AYears( --Academic Year
 AYearId	Int Identity not null primary key,
 UserId		Int not null References Users(UserId),
 Title	nvarchar(100)		Not Null,
+DefaultRingCount Int	not null,
 CreatedAt	DateTime	Default(GetDate()))
 Go
 Create	Table	Lessons(
@@ -62,22 +63,20 @@ UserId	Int not null References Users(UserId),
 AYearId	Int not null References AYears(AYearId),
 TeacherId	Int not null	References Teachers(TeacherId),
 DaysOfWeek	Int	not null,	--0,1,2,3,4,5,6
-RingNumber	Int	not null, -- 1,2,3,4,....
-FHStatus		char	not null, -- empty, free, inclass  (FH == First Half)
-FHClass	Int	References Classes(ClassId),
-SHStatus		char	not null,
-SHClass	Int References Classes(ClassId),
+RingNumber	Int	not null, -- 1,2,3,4,....Z
+FHIsFree		bit	not null, 
+SHIsFree		bit	not null,
 CreatedAt	DateTime	Default(GetDate()))
 Go
 Create	Table	WP(		-- Weekly Program
 WPId	Int	Identity	not null	primary key,
 UsersId		Int not null References Users(UserId),
 AYearId	Int not null References AYears(AYearId),
+ClassId	Int not null References Class(ClassId),
 DaysOfWeek	Int	not null,	--0,1,2,3,4,5,6
 RingNumber	Int	not null, -- 1,2,3,4,....
-FHTeacher	Int	References Teachers(TeacherId),		--check that this teacher can teach this lesson
-FHLesson	Int	References Lessons(LessonId),
-SHTeacher	Int	References Teachers(TeacherId),		--check that this teacher can teach this lesson
-SHLesson	Int	References Lessons(LessonId),
+HalfRingNumber Int not null, --1,2
+Teacher	Int	References Teachers(TeacherId),		--check that this teacher can teach this lesson
+Lesson	Int	References Lessons(LessonId),
 CreatedAt	DateTime	Default(GetDate()))
 Go

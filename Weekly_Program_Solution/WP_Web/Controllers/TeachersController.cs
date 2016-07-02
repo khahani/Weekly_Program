@@ -77,11 +77,15 @@ namespace WP_Web.Controllers
                 .OrderBy(l => l.Name)
                 .Select(l => l.Name).ToList();
 
+            var defaultRingCount = db.AcademicYears.Where(m => m.AcademicYearId == CurrentAcademicYear.AcademicYearId).FirstOrDefault().DefaultRingCount;
+
+            ViewBag.RingCount = defaultRingCount;
+
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create([Bind(Include = "TeacherId,Name,Job, CanTeach")] TeacherDetailViewModel model)
+        public ActionResult Create([Bind(Include = "TeacherId,Name,Job, CanTeach, Schedule")] TeacherDetailViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -115,8 +119,23 @@ namespace WP_Web.Controllers
 
                 db.SaveChanges();
 
+                List<TeacherFreeTime> tfts = TeacherFreeTime.FromTableToDb(model.Schedule.ToArray());
+
+                for (int i = 0; i < tfts.Count; i++)
+                {
+                    tfts[i].TeacherId = newTeacher.TeacherId;
+                    tfts[i].AcademicYearId = CurrentAcademicYear.AcademicYearId;
+                    tfts[i].UserId = CurrentUser.UserId;
+                }
+
+                db.TeacherFreeTimes.AddRange(tfts);
+
+                db.SaveChanges();
+
                 return RedirectToAction("Index", "Teachers");
             }
+
+
 
             model.Lessons = db.Lessons
                 .Where(l => l.AcademicYearId == CurrentAcademicYear.AcademicYearId && l.UserId == CurrentUser.UserId)
@@ -161,8 +180,13 @@ namespace WP_Web.Controllers
                 CanTeach = db.CanTeaches
                     .Include(m => m.Lesson).
                     Where(m => m.TeacherId == teacher.TeacherId)
-                    .Select(m => m.Lesson.Name).ToList()
+                    .Select(m => m.Lesson.Name).ToList(),
+                Schedule = TeacherFreeTime.GetCheckedIds(db.TeacherFreeTimes.Where(m=>m.TeacherId == teacher.TeacherId).ToList()).ToList()
             };
+
+            var defaultRingCount = db.AcademicYears.Where(m => m.AcademicYearId == CurrentAcademicYear.AcademicYearId).FirstOrDefault().DefaultRingCount;
+
+            ViewBag.RingCount = defaultRingCount;
 
             return View(model);
         }
@@ -172,7 +196,7 @@ namespace WP_Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TeacherId,Name,Job, CanTeach")] TeacherDetailViewModel model)
+        public ActionResult Edit([Bind(Include = "TeacherId,Name,Job, CanTeach, Schedule")] TeacherDetailViewModel model)
         {
             if (!AuthInfo.Authenticated)
                 return RedirectToAction("Login", "Home");
@@ -239,6 +263,28 @@ namespace WP_Web.Controllers
 
                 db.SaveChanges();
 
+
+                //remove all tfts for teacher
+                var existsTFTS = db.TeacherFreeTimes.Where(m => m.TeacherId == teacher.TeacherId && m.UserId == CurrentUser.UserId);
+
+                db.TeacherFreeTimes.RemoveRange(existsTFTS);
+
+                db.SaveChanges();
+
+                //insert new tfts 
+                List<TeacherFreeTime> tfts = TeacherFreeTime.FromTableToDb(model.Schedule.ToArray());
+
+                for (int i = 0; i < tfts.Count; i++)
+                {
+                    tfts[i].TeacherId = teacher.TeacherId;
+                    tfts[i].AcademicYearId = CurrentAcademicYear.AcademicYearId;
+                    tfts[i].UserId = CurrentUser.UserId;
+                }
+
+                db.TeacherFreeTimes.AddRange(tfts);
+
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             return View(model);
@@ -271,8 +317,15 @@ namespace WP_Web.Controllers
                 .Where(t => t.UserId == CurrentUser.UserId && t.AcademicYearId == CurrentAcademicYear.AcademicYearId && t.TeacherId == id)
                 .FirstOrDefault();
 
+            var tfts = db.TeacherFreeTimes.Where(m => m.UserId == CurrentUser.UserId && m.AcademicYearId == CurrentAcademicYear.AcademicYearId && m.TeacherId == teacher.TeacherId);
+
+            db.TeacherFreeTimes.RemoveRange(tfts);
+
             db.Teachers.Remove(teacher);
+
             db.SaveChanges();
+
+
             return RedirectToAction("Index");
         }
 

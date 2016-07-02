@@ -1,4 +1,6 @@
-﻿@model WP_Web.Models.TeacherDetailViewModel
+﻿@using MvcCheckBoxList.Model;
+
+@model WP_Web.Models.TeacherDetailViewModel
 
 @{
     Layout = null;
@@ -10,6 +12,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create</title>
+    <link href="~/Content/Css/SiteCss.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
 </head>
 <body>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -44,38 +49,124 @@
 
             <div class="form-group">
                 <div class="col-md-10">
+
                     @foreach (var item in Model.Lessons)
                     {
-                       <ul>
-                           <li><input type="checkbox" name="CanTeach" value="@item" id="@item" 
-                                      @{
-                                          if (Model.CanTeach.Contains(item))
-                                          { <text>checked="checked" </text>}
-                                                                           } />
-                                <label for="@item">@item</label>
-                            </li>
-                       </ul>
+                        <div class="checkbox col-md-offset-2">
+                            <label>
+                                <input type="checkbox" name="CanTeach" value="@item" id="@item"
+                                       @{ if (Model.CanTeach.Contains(item)) { <text> checked="checked" </text>   } } />
+                                @item
+                            </label>
+                        </div>
+
                     }
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </div>
         </div>
+
+    <table cellpadding="0" cellspacing="0" class="StyleTableClassSchedule">
+
+        <tr>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek"></td>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek">
+                شنبه
+            </td>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek">
+                یکشنبه
+            </td>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek">
+                دوشنبه
+            </td>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek">
+                سه شنبه
+            </td>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek">
+                چهارشنبه
+            </td>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek">
+                پنج شنبه
+            </td>
+
+            <td class="StyleTdClassSchedule TdHeadlinesWeek">
+                جمعه
+            </td>
+
+        </tr>
+
+        @for (int i = 0; i < ViewBag.RingCount; i++)
+        {
+            <tr>
+                <td class="StyleTdClassSchedule TdRightClassSchedule">
+                    <div>
+                        @switch (i)
+                        {
+                            case 0:
+                                <text>ساعت اول</text>
+                                break;
+                            case 1:
+                            <text>ساعت دوم</text>
+                                break;
+                            case 2:
+                            <text>ساعت سوم</text>
+                                break;
+                            case 3:
+                            <text>ساعت چهارم</text>
+                                break;
+                            case 4:
+                            <text>ساعت پنجم</text>
+                                break;
+                            case 5:
+                            <text>ساعت ششم</text>
+                                break;
+                            case 6:
+                            <text>ساعت هفتم</text>
+                                break;
+                            case 7:
+                            <text>ساعت هشتم</text>
+                                break;
+                            default:
+                                break;
+                        }
+                    </div>
+                </td>
+
+                @for (int j = 0; j < 7; j++)
+                {
+
+                    <td class="StyleTdClassSchedule TdContentClassSchedule">
+                        <input type="checkbox" name="Schedule" id="@i-@j-0" value="@i-@j-0" @if (Model.Schedule.Contains(i + "-" + j + "-0")) { <text>checked</text> } />
+                        <input type="checkbox" name="Schedule" id="@i-@j-1" value="@i-@j-1" @if (Model.Schedule.Contains(i + "-" + j + "-1")) { <text> checked</text> } />
+                    </td>
+                }
+
+            </tr>
+        }
+
+    </table>
     }
 
     <div>
-        @*<div id="search-form">
-                @Html.Action("Search", "Lessons")
-            </div>
-            <div id="search-results">
-            </div>*@
 
         @Html.Action("Create", "Lessons")
     </div>
+
+   
+
+
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
