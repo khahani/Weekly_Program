@@ -16,6 +16,9 @@ namespace WP_Web.Models
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<CanTeach> CanTeaches { get; set; }
+        public DbSet<Class> Classes { get; set; }
+        public DbSet<TeacherFreeTime> TeacherFreeTimes { get; set; }
+        public DbSet<WeeklyProgram> WeeklyPrograms { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

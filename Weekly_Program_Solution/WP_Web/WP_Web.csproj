@@ -65,6 +65,9 @@
     <Reference Include="MsieJavaScriptEngine">
       <HintPath>..\packages\MsieJavaScriptEngine.1.7.0\lib\net40\MsieJavaScriptEngine.dll</HintPath>
     </Reference>
+    <Reference Include="MvcCheckBoxList">
+      <HintPath>..\packages\MvcCheckBoxList.1.4.5\lib\net45\MvcCheckBoxList.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -137,8 +140,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-rtl.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Css\FontFace\bmitra.svg" />
+    <Content Include="Content\Css\FontFace\bmitrabd.svg" />
+    <Content Include="Content\Css\index.css" />
+    <Content Include="Content\Css\SiteCss.css" />
     <Content Include="Content\Site.css" />
     <Content Include="App_Data\EmailTemplates\ActivateEmailMessageTemplate.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -146,6 +154,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Css\FontFace\bmitra.eot" />
+    <Content Include="Content\Css\FontFace\bmitra.ttf" />
+    <Content Include="Content\Css\FontFace\bmitra.woff" />
+    <Content Include="Content\Css\FontFace\bmitrabd.eot" />
+    <Content Include="Content\Css\FontFace\bmitrabd.ttf" />
+    <Content Include="Content\Css\FontFace\bmitrabd.woff" />
+    <Content Include="Content\Css\FontFace\BYekan.eot" />
+    <Content Include="Content\Css\FontFace\BYekan.ttf" />
+    <Content Include="Content\Css\FontFace\BYekan.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -165,7 +182,6 @@
     <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AcademicYearsController.cs" />
-    <Compile Include="Controllers\CanTeachesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
@@ -194,15 +210,34 @@
     <Compile Include="Migrations\201606010714492_Add_CanTeaches.Designer.cs">
       <DependentUpon>201606010714492_Add_CanTeaches.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606080720489_AddClass.cs" />
+    <Compile Include="Migrations\201606080720489_AddClass.Designer.cs">
+      <DependentUpon>201606080720489_AddClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606230458537_Add_DefaultRingCount.cs" />
+    <Compile Include="Migrations\201606230458537_Add_DefaultRingCount.Designer.cs">
+      <DependentUpon>201606230458537_Add_DefaultRingCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607020500272_Add_TeacherFreeTime.cs" />
+    <Compile Include="Migrations\201607020500272_Add_TeacherFreeTime.Designer.cs">
+      <DependentUpon>201607020500272_Add_TeacherFreeTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607020820298_Add_WeeklyProgram.cs" />
+    <Compile Include="Migrations\201607020820298_Add_WeeklyProgram.Designer.cs">
+      <DependentUpon>201607020820298_Add_WeeklyProgram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicYear.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
     <Compile Include="Models\CanTeach.cs" />
+    <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\Teacher.cs" />
-    <Compile Include="Models\TeacherViewModel.cs" />
+    <Compile Include="Models\TeacherDetailViewModel.cs" />
+    <Compile Include="Models\TeacherFreeTime.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Models\WeeklyProgram.cs" />
     <Compile Include="Models\WPDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -220,7 +255,6 @@
     <Content Include="Views\AcademicYears\Edit.cshtml" />
     <Content Include="Views\AcademicYears\Index.cshtml" />
     <Content Include="Views\WeeklySchedules\Index.cshtml" />
-    <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Teachers\Delete.cshtml" />
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
@@ -233,6 +267,7 @@
     <Content Include="Views\Lessons\List.cshtml" />
     <Content Include="Views\Lessons\_SearchFormPartial.cshtml" />
     <Content Include="Views\Lessons\_SearchResultPartial.cshtml" />
+    <Content Include="Views\Teachers\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -256,10 +291,20 @@
     <EmbeddedResource Include="Migrations\201606010714492_Add_CanTeaches.resx">
       <DependentUpon>201606010714492_Add_CanTeaches.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606080720489_AddClass.resx">
+      <DependentUpon>201606080720489_AddClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606230458537_Add_DefaultRingCount.resx">
+      <DependentUpon>201606230458537_Add_DefaultRingCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607020500272_Add_TeacherFreeTime.resx">
+      <DependentUpon>201607020500272_Add_TeacherFreeTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607020820298_Add_WeeklyProgram.resx">
+      <DependentUpon>201607020820298_Add_WeeklyProgram.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\CanTeaches\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
